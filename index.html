@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>MMO.S - Kiếm Tiền Online Từ Chia Sẻ Link</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- iOS Status Bar -->
+    <div class="ios-status-bar">
+        <div class="status-left">
+            <span id="statusTime">9:41</span>
+        </div>
+        <div class="status-notch"></div>
+        <div class="status-right">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <div class="battery-icon">
+                <div class="battery-level"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER - iOS Navigation Bar Style -->
+    <header class="header ios-nav">
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span>MMO<span class="highlight">.S</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Trang chủ</a>
+                <a href="#how-it-works">Cách hoạt động</a>
+                <a href="#rewards">Mốc thưởng</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-ios btn-ios-secondary" onclick="openModal('login')">Đăng nhập</button>
+                <button class="btn-ios btn-ios-primary" onclick="openModal('register')">Đăng ký</button>
+            </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- iOS Mobile Menu -->
+    <div id="mobileMenu" class="ios-mobile-menu">
+        <div class="mobile-menu-backdrop" onclick="toggleMobileMenu()"></div>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h3>Menu</h3>
+                <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="#home" onclick="toggleMobileMenu()">
+                    <i class="fas fa-house"></i> Trang chủ
+                </a>
+                <a href="#how-it-works" onclick="toggleMobileMenu()">
+                    <i class="fas fa-gear"></i> Cách hoạt động
+                </a>
+                <a href="#rewards" onclick="toggleMobileMenu()">
+                    <i class="fas fa-gift"></i> Mốc thưởng
+                </a>
+                <a href="#contact" onclick="toggleMobileMenu()">
+                    <i class="fas fa-envelope"></i> Liên hệ
+                </a>
+            </div>
+            <div class="mobile-menu-buttons">
+                <button class="btn-ios btn-ios-secondary btn-full" onclick="openModal('login'); toggleMobileMenu();">Đăng nhập</button>
+                <button class="btn-ios btn-ios-primary btn-full" onclick="openModal('register'); toggleMobileMenu();">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION - iOS Style -->
+    <section id="home" class="hero-ios">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content-ios">
+            <div class="hero-text">
+                <div class="ios-pill">🔥 Nền tảng kiếm tiền #1 Việt Nam</div>
+                <h1>Kiếm Tiền Online<br>Chỉ Với <span class="gradient-text">Chia Sẻ Link</span></h1>
+                <p class="hero-desc">Hoàn thành nhiệm vụ chia sẻ link đơn giản, nhận thưởng hấp dẫn. Càng chia sẻ nhiều, càng kiếm được nhiều!</p>
+
+                <!-- iOS Stats Cards -->
+                <div class="ios-stats-row">
+                    <div class="ios-stat-card">
+                        <div class="ios-stat-icon"><i class="fas fa-users"></i></div>
+                        <span class="ios-stat-number" id="totalUsers">15,234</span>
+                        <span class="ios-stat-label">Thành viên</span>
+                    </div>
+                    <div class="ios-stat-card">
+                        <div class="ios-stat-icon"><i class="fas fa-coins"></i></div>
+                        <span class="ios-stat-number" id="totalPaid">850M+</span>
+                        <span class="ios-stat-label">Đã thanh toán</span>
+                    </div>
+                    <div class="ios-stat-card">
+                        <div class="ios-stat-icon"><i class="fas fa-list-check"></i></div>
+                        <span class="ios-stat-number" id="totalTasks">500+</span>
+                        <span class="ios-stat-label">Nhiệm vụ</span>
+                    </div>
+                </div>
+
+                <button class="btn-ios btn-ios-primary btn-large" onclick="openModal('register')">
+                    <i class="fas fa-rocket"></i> Bắt đầu kiếm tiền ngay
+                </button>
+            </div>
+
+            <div class="hero-phone">
+                <div class="iphone-frame">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen">
+                        <div class="app-header-mock">
+                            <span>MMO.S</span>
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="app-balance-card">
+                            <span class="balance-label">Số dư hiện tại</span>
+                            <span class="balance-amount">1,250,000 ₫</span>
+                            <div class="balance-bar">
+                                <div class="balance-fill"></div>
+                            </div>
+                            <span class="balance-goal">Mốc tiếp: 1,500,000 ₫</span>
+                        </div>
+                        <div class="app-tasks-mock">
+                            <div class="task-item-mock completed">
+                                <div class="task-check"><i class="fas fa-check-circle"></i></div>
+                                <div class="task-info-mock">
+                                    <span>Chia sẻ link Facebook</span>
+                                    <small>+25,000 ₫</small>
+                                </div>
+                            </div>
+                            <div class="task-item-mock completed">
+                                <div class="task-check"><i class="fas fa-check-circle"></i></div>
+                                <div class="task-info-mock">
+                                    <span>Chia sẻ link Zalo</span>
+                                    <small>+15,000 ₫</small>
+                                </div>
+                            </div>
+                            <div class="task-item-mock pending">
+                                <div class="task-check pending-check"><i class="fas fa-circle"></i></div>
+                                <div class="task-info-mock">
+                                    <span>Chia sẻ link Twitter</span>
+                                    <small>+30,000 ₫</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="iphone-home-indicator"></div>
+                    </div>
+                </div>
+                <!-- Floating Notifications -->
+                <div class="ios-notification notif-1">
+                    <div class="notif-icon green"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="notif-text">
+                        <strong>Nhận thưởng!</strong>
+                        <span>+50,000 VNĐ vào tài khoản</span>
+                    </div>
+                </div>
+                <div class="ios-notification notif-2">
+                    <div class="notif-icon blue"><i class="fas fa-trophy"></i></div>
+                    <div class="notif-text">
+                        <strong>Đạt mốc thưởng!</strong>
+                        <span>Bạn đã lên hạng Vàng 🏆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS - iOS Style -->
+    <section id="how-it-works" class="section-ios">
+        <h2 class="section-title-ios">Cách Hoạt Động</h2>
+        <p class="section-subtitle-ios">Chỉ 3 bước đơn giản để bắt đầu kiếm tiền</p>
+        <div class="ios-steps">
+            <div class="ios-step-card">
+                <div class="step-icon-ios blue-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="step-num">1</div>
+                <h3>Đăng ký tài khoản</h3>
+                <p>Tạo tài khoản miễn phí chỉ trong 30 giây. Không cần xác minh phức tạp.</p>
+            </div>
+            <div class="ios-step-connector">
+                <div class="connector-line"></div>
+                <div class="connector-dot"></div>
+            </div>
+            <div class="ios-step-card">
+                <div class="step-icon-ios purple-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="step-num">2</div>
+                <h3>Nhận nhiệm vụ</h3>
+                <p>Chọn nhiệm vụ phù hợp, nhận link chia sẻ cá nhân của bạn.</p>
+            </div>
+            <div class="ios-step-connector">
+                <div class="connector-line"></div>
+                <div class="connector-dot"></div>
+            </div>
+            <div class="ios-step-card">
+                <div class="step-icon-ios green-icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="step-num">3</div>
+                <h3>Nhận thưởng</h3>
+                <p>Chia sẻ link và nhận thưởng theo từng mốc. Rút tiền nhanh chóng.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REWARD MILESTONES - iOS Style -->
+    <section id="rewards" class="section-ios section-ios-alt">
+        <h2 class="section-title-ios">Mốc Thưởng Hấp Dẫn</h2>
+        <p class="section-subtitle-ios">Càng chia sẻ nhiều, thưởng càng lớn!</p>
+        <div class="ios-rewards-grid">
+            <div class="ios-reward-card">
+                <div class="reward-tier bronze-tier">
+                    <i class="fas fa-medal"></i>
+                    <span>Đồng</span>
+                </div>
+                <div class="reward-clicks">10 lượt click</div>
+                <div class="reward-value">20,000 ₫</div>
+                <ul class="reward-list">
+                    <li><i class="fas fa-checkmark-circle"></i> Thưởng cơ bản</li>
+                    <li><i class="fas fa-checkmark-circle"></i> Mở khóa nhiệm vụ mới</li>
+                </ul>
+            </div>
+            <div class="ios-reward-card">
+                <div class="reward-tier silver-tier">
+                    <i class="fas fa-medal"></i>
+                    <span>Bạc</span>
+                </div>
+                <div class="reward-clicks">50 lượt click</div>
+                <div class="reward-value">120,000 ₫</div>
+                <ul class="reward-list">
+                    <li><i class="fas fa-check-circle"></i> Thưởng x1.5</li>
+                    <li><i class="fas fa-check-circle"></i> Ưu tiên nhiệm vụ VIP</li>
+                    <li><i class="fas fa-check-circle"></i> Hỗ trợ riêng</li>
+                </ul>
+            </div>
+            <div class="ios-reward-card featured">
+                <div class="featured-badge">PHỔ BIẾN NHẤT</div>
+                <div class="reward-tier gold-tier">
+                    <i class="fas fa-trophy"></i>
+                    <span>Vàng</span>
+                </div>
+                <div class="reward-clicks">200 lượt click</div>
+                <div class="reward-value">500,000 ₫</div>
+                <ul class="reward-list">
+                    <li><i class="fas fa-check-circle"></i> Thưởng x2</li>
+                    <li><i class="fas fa-check-circle"></i> Nhiệm vụ không giới hạn</li>
+                    <li><i class="fas fa-check-circle"></i> Rút tiền nhanh 24h</li>
+                    <li><i class="fas fa-check-circle"></i> Badge đặc biệt</li>
+                </ul>
+            </div>
+            <div class="ios-reward-card">
+                <div class="reward-tier diamond-tier">
+                    <i class="fas fa-gem"></i>
+                    <span>Kim Cương</span>
+                </div>
+                <div class="reward-clicks">500 lượt click</div>
+                <div class="reward-value">1,500,000 ₫</div>
+                <ul class="reward-list">
+                    <li><i class="fas fa-check-circle"></i> Thưởng x3</li>
+                    <li><i class="fas fa-check-circle"></i> Tất cả quyền lợi Vàng</li>
+                    <li><i class="fas fa-check-circle"></i> Thu nhập thụ động</li>
+                    <li><i class="fas fa-check-circle"></i> Thưởng giới thiệu 10%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS - iOS Style -->
+    <section class="section-ios">
+        <h2 class="section-title-ios">Người Dùng Nói Gì?</h2>
+        <p class="section-subtitle-ios">Hàng nghìn người đã tin tưởng sử dụng</p>
+        <div class="ios-testimonials">
+            <div class="ios-testimonial-card">
+                <div class="testimonial-header-ios">
+                    <div class="avatar-ios" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">NT</div>
+                    <div class="testimonial-info-ios">
+                        <strong>Nguyễn Thảo</strong>
+                        <span>Sinh viên, Hà Nội</span>
+                    </div>
+                </div>
+                <div class="stars-ios">★★★★★</div>
+                <p>"Mình kiếm được 2 triệu đầu tiên chỉ sau 1 tuần. Quá dễ dàng!"</p>
+            </div>
+            <div class="ios-testimonial-card">
+                <div class="testimonial-header-ios">
+                    <div class="avatar-ios" style="background: linear-gradient(135deg, #4FACFE, #00F2FE);">TH</div>
+                    <div class="testimonial-info-ios">
+                        <strong>Trần Hùng</strong>
+                        <span>Nhân viên VP, HCM</span>
+                    </div>
+                </div>
+                <div class="stars-ios">★★★★★</div>
+                <p>"Làm thêm ngoài giờ rất thoải mái. Thanh toán nhanh, uy tín."</p>
+            </div>
+            <div class="ios-testimonial-card">
+                <div class="testimonial-header-ios">
+                    <div class="avatar-ios" style="background: linear-gradient(135deg, #A18CD1, #FBC2EB);">LP</div>
+                    <div class="testimonial-info-ios">
+                        <strong>Lê Phương</strong>
+                        <span>Freelancer, Đà Nẵng</span>
+                    </div>
+                </div>
+                <div class="stars-ios">★★★★★</div>
+                <p>"Giao diện dễ dùng, nhiệm vụ đa dạng. Recommend cho mọi người!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER - iOS Style -->
+    <footer id="contact" class="footer-ios">
+        <div class="footer-content-ios">
+            <div class="footer-section-ios">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                    <span>MMO<span class="highlight">.S</span></span>
+                </div>
+                <p>Nền tảng kiếm tiền online uy tín hàng đầu Việt Nam.</p>
+                <div class="social-links-ios">
+                    <a href="#" class="social-btn-ios"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn-ios"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="social-btn-ios"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn-ios"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section-ios">
+                <h4>Liên kết</h4>
+                <a href="#">Về chúng tôi</a>
+                <a href="#">Điều khoản</a>
+                <a href="#">Chính sách</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-section-ios">
+                <h4>Hỗ trợ</h4>
+                <a href="#">Hướng dẫn</a>
+                <a href="#">Báo lỗi</a>
+                <a href="#">Cộng đồng</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="footer-section-ios">
+                <h4>Liên hệ</h4>
+                <p><i class="fas fa-envelope"></i> support@mmo-s.com</p>
+                <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                <p><i class="fas fa-clock"></i> 8:00 - 22:00 hàng ngày</p>
+            </div>
+        </div>
+        <div class="footer-bottom-ios">
+            <p>&copy; 2025 MMO.S - All rights reserved. Made with ❤️ in Vietnam</p>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL - iOS Sheet Style -->
+    <div id="loginModal" class="ios-modal">
+        <div class="ios-modal-backdrop" onclick="closeModal('login')"></div>
+        <div class="ios-modal-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header">
+                <h2>Đăng Nhập</h2>
+                <button class="sheet-close" onclick="closeModal('login')">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="ios-form-group">
+                    <label>Email</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" placeholder="Nhập email của bạn" required>
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label>Mật khẩu</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('loginPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="ios-form-options">
+                    <label class="ios-toggle-label">
+                        <input type="checkbox" class="ios-toggle">
+                        <span class="toggle-switch"></span>
+                        Ghi nhớ đăng nhập
+                    </label>
+                    <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                </div>
+                <button type="submit" class="btn-ios btn-ios-primary btn-full btn-large">
+                    Đăng nhập
+                </button>
+                <div class="ios-divider">
+                    <span>hoặc</span>
+                </div>
+                <button type="button" class="btn-ios btn-ios-social google">
+                    <i class="fab fa-google"></i> Đăng nhập với Google
+                </button>
+                <button type="button" class="btn-ios btn-ios-social apple">
+                    <i class="fab fa-apple"></i> Đăng nhập với Apple
+                </button>
+                <p class="form-footer-ios">
+                    Chưa có tài khoản? <a href="#" onclick="switchModal('register')">Đăng ký ngay</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- REGISTER MODAL - iOS Sheet Style -->
+    <div id="registerModal" class="ios-modal">
+        <div class="ios-modal-backdrop" onclick="closeModal('register')"></div>
+        <div class="ios-modal-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header">
+                <h2>Tạo Tài Khoản</h2>
+                <button class="sheet-close" onclick="closeModal('register')">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="ios-form-group">
+                    <label>Họ và tên</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="regName" placeholder="Nhập họ tên" required>
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label>Email</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="regEmail" placeholder="Nhập email" required>
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label>Số điện thoại</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="regPhone" placeholder="Nhập số điện thoại" required>
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label>Mật khẩu</label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="regPassword" placeholder="Tạo mật khẩu (6+ ký tự)" required minlength="6">
+                        <button type="button" class="toggle-password" onclick="togglePassword('regPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label>Mã giới thiệu <span class="optional">(không bắt buộc)</span></label>
+                    <div class="ios-input-wrapper">
+                        <i class="fas fa-gift"></i>
+                        <input type="text" id="regReferral" placeholder="Nhập mã giới thiệu">
+                    </div>
+                </div>
+                <div class="ios-form-group">
+                    <label class="ios-toggle-label">
+                        <input type="checkbox" class="ios-toggle" required>
+                        <span class="toggle-switch"></span>
+                        Tôi đồng ý với <a href="#">điều khoản sử dụng</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-ios btn-ios-primary btn-full btn-large">
+                    Tạo tài khoản
+                </button>
+                <p class="form-footer-ios">
+                    Đã có tài khoản? <a href="#" onclick="switchModal('login')">Đăng nhập</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- iOS Toast Notification -->
+    <div id="iosToast" class="ios-toast">
+        <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+        <div class="toast-message">Thành công!</div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
